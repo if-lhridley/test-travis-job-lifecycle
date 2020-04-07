@@ -1,0 +1,145 @@
+os:
+  - linux
+
+dist:  bionic
+
+language: php
+php:
+  - '7.3'
+
+jobs:
+  include:
+    - name: Test Run 8.8.1
+      before_script:
+        - echo "Before script Test run 8.8.1"
+      script:
+        - echo "Test Run 1"
+    - name: Test Run 8.8.2
+      script:
+        - echo "Test Run 2"
+    - name: Test Run 8.8.3
+      script:
+        - echo "Test Run 3"
+################################# Build on Drupal 8.9 ##################################
+#    - name: Test Run 8.9.1
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 1"
+#        - ./scripts/test1.sh
+#    - name: Test Run 8.9.2
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 2"
+#        - ./scripts/test2.sh
+#    - name: Test Run 8.9.3
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 3"
+#        - ./scripts/test3.sh
+#    - name: Test Run 8.9.4
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 4"
+#        - ./scripts/test4.sh
+#    - name: Test Run 8.9.5
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 5"
+#        - ./scripts/test5.sh
+#    - name: Test Run 8.9.1&2 Fails
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 1&2 Fails"
+#        - ./scripts/testsfail1.sh
+#    - name: TestRun 8.9.3&4 Fails
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 3&4 Fails"
+#        - ./scripts/testsfail3.sh
+#    - name: TestRun 8.9.5&6 Fails
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 5&6 Fails"
+#        - ./scripts/testsfail5.sh
+#    - name: Test Run 8.9.7&8 Fails
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 7&8 Fails"
+#        - ./scripts/testsfail7.sh
+#    - name: Test Run 8.9.9&10 Fails
+#      script:
+#        - composer require drupal/core-composer-scaffold:^8.9 drupal/core-project-message:^8.9 drupal/core-recommended:^8.9 drupal/core-dev:^8.9 drupal/core:^8.9
+#        - echo "Test Run 9&10 Fails"
+#        - ./scripts/testsfail9.sh
+
+################################# Build on Drupal 9.0 ##################################
+## composer remove drupal/context_active_trail drupal/context
+## composer require drupal/core-composer-scaffold:^9.0 drupal/core-project-message:^9.0 drupal/core-recommended:^9.0 drupal/core-dev:^9.0 drupal/core:^9.0 composer/installers:^1.8 typo3/phar-stream-wrapper:^3.1.4
+## docker-compose exec php7.3 /bin/sh -c "cd /var/www/html/docroot; ../bin/drush status-report --filter='title=Drupal' --field=Summary"
+#    - name: Test Run 9.0.1
+#      script:
+#        - echo "Test Run 1"
+#        - ./scripts/test1.sh
+#    - name: Test Run 9.0.2
+#      script:
+#        - echo "Test Run 2"
+#        - ./scripts/test2.sh
+#    - name: Test Run 9.0.3
+#      script:
+#        - echo "Test Run 3"
+#        - ./scripts/test3.sh
+#    - name: Test Run 9.0.4
+#      script:
+#        - echo "Test Run 4"
+#        - ./scripts/test4.sh
+#    - name: Test Run 9.0.5
+#      script:
+#        - echo "Test Run 5"
+#        - ./scripts/test5.sh
+#    - name: Test Run 9.0.1&2 Fails
+#      script:
+#        - echo "Test Run 1&2 Fails"
+#        - ./scripts/testsfail1.sh
+#    - name: TestRun 9.0.3&4 Fails
+#      script:
+#        - echo "Test Run 3&4 Fails"
+#        - ./scripts/testsfail3.sh
+#    - name: TestRun 9.0.5&6 Fails
+#      script:
+#        - echo "Test Run 5&6 Fails"
+#        - ./scripts/testsfail5.sh
+#    - name: Test Run 9.0.7&8 Fails
+#      script:
+#        - echo "Test Run 7&8 Fails"
+#        - ./scripts/testsfail7.sh
+#    - name: Test Run 9.0.9&10 Fails
+#      script:
+#        - echo "Test Run 9&10 Fails"
+#        - ./scripts/testsfail9.sh
+
+addons:
+  hosts:
+    - tabrasa8.ifdev
+
+env:
+  - COMPOSER_MEMORY_LIMIT=-1
+
+git:
+  # Do a full clone
+  depth: false
+  # Avoid logging git clone messages
+  quiet: true
+
+notifications:
+  email:
+    - lisa@ifsight.com
+    - jacqui@ifsight.com
+  on_success: change
+  on_failure: always
+
+before_install:
+  - echo "Global before install"
+install:
+  - echo "Global Install"
+before_script:
+  - echo "Global Before Script"
